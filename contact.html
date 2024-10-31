@@ -321,7 +321,9 @@
                           }).then(response => {
                           if (response.ok) {
                         // Show success message
-                        document.getElementById('success-message').style.display = 'block';
+                        const successMessage = document.getElementById('sucess-message')
+                        successMessage.classList.add('succeess')
+                        successMessage.style.display = 'block';
                         form.reset(); // Reset form fields
                         } else {
                          // If response is not ok, display status code and text
