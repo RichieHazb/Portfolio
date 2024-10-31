@@ -247,7 +247,7 @@
                   <div class="contact-area">
                     <div class="leave-comments-area">
                       <div class="comments-box">
-                        <form id="contact-form" action="assets/mail.php" method="POST">
+                        <form id="contact-form" action="https://formspree.io/f/mwpkllkr" method="POST">
                           <div class="row gx-3">
                             <div class="col-md-6">
                               <div class="mb-4">
@@ -272,10 +272,10 @@
                                 <label class="form-label">Budget</label>
                                 <select name="budget" required class="form-select shadow-none">
                                   <option disabled selected>Select budget...</option>
-                                  <option value="$5000">$5000</option>
-                                  <option value="$5000 - $1000">$5000 - $10000</option>
-                                  <option value="$10000 - $2000">$10000 - $20000</option>
-                                  <option value="$20000">$20000+</option>
+                                  <option value="$300">$300</option>
+                                  <option value="$500 - $1000">$500 - $1000</option>
+                                  <option value="$1000 - $2000">$1000 - $2000</option>
+                                  <option value="$2000">$2000+</option>
                                 </select>
                               </div>
                             </div>
@@ -286,6 +286,7 @@
                                   placeholder="Type details about your inquiry"></textarea>
                               </div>
                             </div>
+                            <input type="hidden" name="_replyto" value="richardwhazb@gmail.com">
                             <div class="col-md-12">
                               <button class="submit-btn" type="submit">
                                 Send Message
@@ -300,13 +301,48 @@
                             </div>
                           </div>
                         </form>
+                        <div id="success-message" style="display:none; color: green; margin-top: 20px;">
+                          Thank you! Your message has been successfully sent.
+                        </div>
+                        <script>
+                          document.getElementById('contact-form').addEventListener('submit', function(event) {
+                         event.preventDefault(); // Prevent the default form submission
+  
+                        const form = event.target;
+                        const formData = new FormData(form);
+  
+                         // Send form data to Formspree or Getform endpoint
+                         fetch(form.action, {
+                          method: 'POST',
+                          body: formData,
+                          headers: {
+                          'Accept': 'application/json'
+                          }
+                          }).then(response => {
+                          if (response.ok) {
+                        // Show success message
+                        document.getElementById('success-message').style.display = 'block';
+                        form.reset(); // Reset form fields
+                        } else {
+                         // If response is not ok, display status code and text
+                         response.json().then((data) => {
+                        if (data && data.error) {
+                          alert(`Error: ${data.error}`);
+                        } else {
+                          alert('Oops! There was a problem with your submission. Please try again.');
+                          }
+                        }).catch(() => {
+                          alert(`Oops! There was a problem with your submission. Response status: ${response.status} - ${response.statusText}`);
+                          });
+                        }
+                       }).catch(error => {
+                         // Catch any network errors or issues
+                         alert(`Oops! There was a problem with your submission. Network error: ${error.message}`);
+                         });
+                        });
+                        </script>
                         <p class="ajax-response mb-0"></p>
                       </div>
-                    </div>
-                    <div class="contact-map-area">
-                      <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280012016!2d-74.14448732737499!3d40.69763123331177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1711832776336!5m2!1sen!2sbd"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="frequently-asked-questions">
                       <h2 class="main-common-title">Frequently Asked Questions
