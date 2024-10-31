@@ -306,40 +306,54 @@
                         </div>
                         <script>
                           document.getElementById('contact-form').addEventListener('submit', function(event) {
-                         event.preventDefault(); // Prevent the default form submission
-  
-                        const form = event.target;
-                        const formData = new FormData(form);
-  
-                         // Send form data to Formspree or Getform endpoint
-                         fetch(form.action, {
-                          method: 'POST',
-                          body: formData,
-                          headers: {
-                          'Accept': 'application/json'
-                          }
-                          }).then(response => {
-                          if (response.ok) {
-                        // Show success message
-                        document.getElementById('success-message').style.display = 'block';
-                        form.reset(); // Reset form fields
-                        } else {
-                         // If response is not ok, display status code and text
-                         response.json().then((data) => {
-                        if (data && data.error) {
-                          alert(`Error: ${data.error}`);
-                        } else {
-                          alert('Oops! There was a problem with your submission. Please try again.');
-                          }
-                        }).catch(() => {
-                          alert(`Oops! There was a problem with your submission. Response status: ${response.status} - ${response.statusText}`);
-                          });
-                        }
-                       }).catch(error => {
-                         // Catch any network errors or issues
-                         alert(`Oops! There was a problem with your submission. Network error: ${error.message}`);
-                         });
-                        });
+  event.preventDefault(); // Prevent default submission to handle it with JavaScript
+
+  const form = event.target;
+  const formData = new FormData(form);
+  const responseParagraph = document.querySelector('.ajax-response');
+
+  // Check if the email is valid
+  const email = formData.get('email');
+  if (!validateEmail(email)) {
+    responseParagraph.innerText = "Please enter a valid email address.";
+    responseParagraph.style.color = "red";
+    return;
+  }
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      responseParagraph.innerText = "Thank you! Your message has been successfully sent.";
+      responseParagraph.style.color = "green";
+      form.reset(); // Reset form fields
+    } else {
+      response.json().then((data) => {
+        if (data && data.error) {
+          responseParagraph.innerText = `Error: ${data.error}`;
+        } else {
+          responseParagraph.innerText = "Oops! There was a problem with your submission. Please try again.";
+        }
+        responseParagraph.style.color = "red";
+      }).catch(() => {
+        responseParagraph.innerText = `Oops! There was a problem with your submission. Response status: ${response.status} - ${response.statusText}`;
+        responseParagraph.style.color = "red";
+      });
+    }
+  }).catch(error => {
+    responseParagraph.innerText = `Oops! There was a problem with your submission. Network error: ${error.message}`;
+    responseParagraph.style.color = "red";
+  });
+});
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(String(email).toLowerCase());
+}
                         </script>
                       </div>
                     </div>
