@@ -621,8 +621,8 @@ p {
 		transform: translateY(0)
 	}
 
-	to {
-		transform: translateY(calc(-100% - 1rem))
+	100% {
+		transform: translateY(calc(-40%))
 	}
 }
 
