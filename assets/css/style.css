@@ -616,6 +616,12 @@ p {
 	animation: scrollY 10s linear infinite;
 }
 
+.project-caption {
+  font-size: 14px;
+  color: #777;
+  margin-top: 4px;
+}
+
 @keyframes scrollY {
 	0% {
 		transform: translateY(0)
