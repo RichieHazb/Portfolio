@@ -613,22 +613,24 @@ p {
 }
 
 .work-experiance-card .work-experiance-slider {
-	animation: scrollY 10s linear infinite;
-}
-
-.project-caption {
-  font-size: 14px;
-  color: #777;
-  margin-top: 4px;
+	animation: scrollY 12s ease-in-out infinite;
 }
 
 @keyframes scrollY {
-	0% {
-		transform: translateY(0)
+
+	0%,
+	20% {
+		transform: translateY(0);
 	}
 
+	45%,
+	55% {
+		transform: translateY(-72px);
+	}
+
+	80%,
 	100% {
-		transform: translateY(calc(-40%))
+		transform: translateY(0);
 	}
 }
 
