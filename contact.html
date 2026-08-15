@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Richard Hazboun - Portfolio</title>
-  <meta name="description" content="Richard Hazboun - Portfolio">
+  <title>Contact Richard Hazboun | Web Development & Business Growth</title>
+  <meta name="description"
+    content="Get in touch with Richard Hazboun for web development, business growth, ecommerce and digital project inquiries.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
@@ -30,7 +31,7 @@
           <div class="menu-container">
             <div class="logo">
               <a class="navbar-brand me-0" href="index.html">
-                <img src="assets/img/favicon.svg" width="38" height="38" class="logo-icon" alt="Logo"/>
+                <img src="assets/img/favicon.svg" width="38" height="38" class="logo-icon" alt="Logo" />
                 <span>Richard <span class="primary">Hazboun</span></span>
               </a>
             </div>
@@ -217,7 +218,8 @@
                     </div>
                     <div class="social-media-icon">
                       <ul class="list-unstyled">
-                        <li><a href="https://www.linkedin.com/in/richard-hazboun-84026a256/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/richard-hazboun-84026a256/" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
                         <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
                         <li><a href="#"><i class="fab fa-github"></i></a></li>
                         <li><a href="#"><i class="fab fa-youtube"></i></a></li>
@@ -233,244 +235,264 @@
                   <div class="top-info">
                     <div class="text">
                       <h1 class="main-title">Let's 👋 <span>Work</span> Together</h1>
-                      <p>I help businesses grow through strategic development and build modern, high-performing websites that take your vision to the next level.</p>
+                      <p>Have a project, business idea or opportunity in mind? Tell me what you're working on and I'll
+                        get back to you.</p>
                     </div>
-                  </div><div class="contact-area">
-  <div class="leave-comments-area">
-    <div class="comments-box">
-      <form id="contact-form" action="https://formspree.io/f/mwpkllkr" method="POST">
-        <div class="row gx-3">
-          <div class="col-md-6">
-            <div class="mb-4">
-              <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
-              <input id="name" name="name" type="text" class="form-control shadow-none" placeholder="Enter your name" required>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="mb-4">
-              <label class="form-label" for="email">Email <span class="text-danger">*</span></label>
-              <input id="email" name="email" type="email" class="form-control shadow-none" placeholder="Enter your email" required>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="mb-4">
-              <label class="form-label" for="subject">Subject <span class="text-danger">*</span></label>
-              <input id="subject" name="subject" type="text" class="form-control shadow-none" placeholder="Subject" required>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="mb-4">
-              <label class="form-label" for="budget">Budget <span class="text-danger">*</span></label>
-              <select id="budget" name="budget" class="form-select shadow-none" required>
-                <option value="" disabled selected>Select budget...</option>
-                <option value="<500"><$500</option>
-                <option value="500-1000">$500–$1,000</option>
-                <option value="1000-2000">$1,000–$2,000</option>
-                <option value="2000+">$2,000+</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="mb-4">
-              <label class="form-label" for="message">Project Details <span class="text-danger">*</span></label>
-              <textarea id="message" name="message" class="form-control shadow-none" rows="4" placeholder="Type details about your inquiry" required></textarea>
-            </div>
-          </div>
-
-          <!-- Optional: sends a reply-to header on some providers -->
-          <input type="hidden" name="_replyto" value="richardwhazb@gmail.com">
-
-          <div class="col-md-12">
-            <button class="submit-btn" type="submit">
-              Send Message
-              <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.5 11.6665V6.6665H12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M17.5 6.6665L10 14.1665L2.5 6.6665" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </form>
-
-      <p id="success-message" class="ajax-response mb-0" aria-live="polite" hidden>
-        Thank you! Your message has been successfully sent.
-      </p>
-
-      <script>
-        (function () {
-          const form = document.getElementById('contact-form');
-          const success = document.getElementById('success-message');
-          if (!form || !success) return;
-
-          form.addEventListener('submit', async (event) => {
-            // Let the browser run built-in validation; if invalid, it blocks submit and this never fires.
-            event.preventDefault();
-
-            // Double-check validity in JS too (defensive)
-            if (!form.checkValidity()) {
-              form.reportValidity();
-              return;
-            }
-
-            const formData = new FormData(form);
-
-            try {
-              const res = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-              });
-
-              if (res.ok) {
-                success.hidden = false;
-                form.reset();
-              } else {
-                // Try to read Formspree JSON error; fall back to status text
-                let msg = 'Oops! There was a problem with your submission.';
-                try {
-                  const data = await res.json();
-                  if (data && data.error) msg = `Error: ${data.error}`;
-                } catch (_) {
-                  msg = `Oops! Response status: ${res.status} - ${res.statusText}`;
-                }
-                alert(msg);
-              }
-            } catch (err) {
-              alert(`Network error: ${err.message}`);
-            }
-          });
-        })();
-      </script>
-    </div>
-  </div>
-</div>
-                    <div class="frequently-asked-questions">
-                      <h2 class="main-common-title">Frequently Asked Questions
-                      </h2>
-                      <div class="frequently-asked-questions-main">
-                        <div class="accordion" id="accordionExample">
-                          <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingOne">
-                              <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                What services do you offer?
-                                <span class="ms-auto">
-                                  <span class="icon ms-4">
-                                    <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
-                                    <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
-                                  </span>
-                                </span>
-                              </button>
-                            </h4>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                              data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p>I specialize in full-stack development, business development, and product design. I build everything from responsive websites and web apps to tailored business solutions.</p>
+                  </div>
+                  <div class="contact-area">
+                    <div class="leave-comments-area">
+                      <div class="comments-box">
+                        <form id="contact-form" action="https://formspree.io/f/mwpkllkr" method="POST">
+                          <div class="row gx-3">
+                            <div class="col-md-6">
+                              <div class="mb-4">
+                                <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
+                                <input id="name" name="name" type="text" class="form-control shadow-none"
+                                  placeholder="Enter your name" required>
                               </div>
                             </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingTwo">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                How can I get in touch with you?
-                                <span class="ms-auto">
-                                  <span class="icon ms-4">
-                                    <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
-                                    <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
-                                  </span>
-                                </span>
-                              </button>
-                            </h4>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                              data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p>You can reach me directly through the contact form on this page, by booking a call, or by emailing me. I usually respond within 24 hours.</p>
+
+                            <div class="col-md-6">
+                              <div class="mb-4">
+                                <label class="form-label" for="email">Email <span class="text-danger">*</span></label>
+                                <input id="email" name="email" type="email" class="form-control shadow-none"
+                                  placeholder="Enter your email" required>
                               </div>
                             </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingThree">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Do you work with individuals or only businesses?
-                                <span class="ms-auto">
-                                  <span class="icon ms-4">
-                                    <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
-                                    <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
-                                  </span>
-                                </span>
-                              </button>
-                            </h4>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                              data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p>I work with both. Whether you’re an individual with a project idea or a business looking for a long-term development partner, I can adapt my services to your needs.</p>
+
+                            <div class="col-md-6">
+                              <div class="mb-4">
+                                <label class="form-label" for="subject">Subject <span
+                                    class="text-danger">*</span></label>
+                                <input id="subject" name="subject" type="text" class="form-control shadow-none"
+                                  placeholder="Subject" required>
                               </div>
                             </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingFour">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                What is the process if I want to start a project with you?
-                                <span class="ms-auto">
-                                  <span class="icon ms-4">
-                                    <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
-                                    <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
-                                  </span>
-                                </span>
-                              </button>
-                            </h4>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                              data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p>To begin, you’ll submit the contact form with some basic details about your project, including your goals, budget, and timeline. Once I review your submission, we’ll schedule a short call or continue over email to clarify your vision. After that, I’ll provide you with a clear project plan, timeline, and cost estimate before moving forward.</p>
+
+                            <div class="col-md-6">
+                              <div class="mb-4">
+                                <label class="form-label" for="budget">Budget</label>
+                                <select id="budget" name="budget" class="form-select shadow-none">
+                                  <option value="" selected>Not sure / Prefer to discuss</option>
+                                  <option value="<500">
+                                    <$500< /option>
+                                  <option value="500-1000">$500–$1,000</option>
+                                  <option value="1000-2000">$1,000–$2,000</option>
+                                  <option value="2000+">$2,000+</option>
+                                </select>
                               </div>
                             </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingFive">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                Do you provide ongoing support after a project is complete?
-                                <span class="ms-auto">
-                                  <span class="icon ms-4">
-                                    <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
-                                    <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
-                                  </span>
-                                </span>
-                              </button>
-                            </h4>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                              data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p>Yes. I believe in long-term collaboration, so I offer maintenance, updates, and technical support depending on your needs.</p>
+
+                            <div class="col-md-12">
+                              <div class="mb-4">
+                                <label class="form-label" for="message">Project Details <span
+                                    class="text-danger">*</span></label>
+                                <textarea id="message" name="message" class="form-control shadow-none" rows="4"
+                                  placeholder="Type details about your inquiry" required></textarea>
                               </div>
                             </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingSix">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                Can I see examples of your previous work?
-                                <span class="ms-auto">
-                                  <span class="icon ms-4">
-                                    <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
-                                    <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
-                                  </span>
-                                </span>
+
+                            <!-- Optional: sends a reply-to header on some providers -->
+
+                            <div class="col-md-12">
+                              <button class="submit-btn" type="submit">
+                                Send Message
+                                <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M17.5 11.6665V6.6665H12.5" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                  <path d="M17.5 6.6665L10 14.1665L2.5 6.6665" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
                               </button>
-                            </h4>
-                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                              data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p>Yes, I’ve included a showcase of my projects on the Works page. I’m also happy to share additional case studies if requested.</p>
-                              </div>
+                            </div>
+                          </div>
+                        </form>
+
+                        <p id="success-message" class="ajax-response mb-0" aria-live="polite" hidden>
+                          Thanks! Your message has been sent. I'll get back to you as soon as possible.
+                        </p>
+
+                        <script>
+                          (function () {
+                            const form = document.getElementById('contact-form');
+                            const success = document.getElementById('success-message');
+                            if (!form || !success) return;
+
+                            form.addEventListener('submit', async (event) => {
+                              // Let the browser run built-in validation; if invalid, it blocks submit and this never fires.
+                              event.preventDefault();
+
+                              // Double-check validity in JS too (defensive)
+                              if (!form.checkValidity()) {
+                                form.reportValidity();
+                                return;
+                              }
+
+                              const formData = new FormData(form);
+
+                              try {
+                                const res = await fetch(form.action, {
+                                  method: 'POST',
+                                  body: formData,
+                                  headers: {'Accept': 'application/json'}
+                                });
+
+                                if (res.ok) {
+                                  success.hidden = false;
+                                  form.reset();
+                                } else {
+                                  // Try to read Formspree JSON error; fall back to status text
+                                  let msg = 'Oops! There was a problem with your submission.';
+                                  try {
+                                    const data = await res.json();
+                                    if (data && data.error) msg = `Error: ${data.error}`;
+                                  } catch (_) {
+                                    msg = `Oops! Response status: ${res.status} - ${res.statusText}`;
+                                  }
+                                  alert(msg);
+                                }
+                              } catch (err) {
+                                alert(`Network error: ${err.message}`);
+                              }
+                            });
+                          })();
+                        </script>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="frequently-asked-questions">
+                    <h2 class="main-common-title">Frequently Asked Questions
+                    </h2>
+                    <div class="frequently-asked-questions-main">
+                      <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h4 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              What services do you offer?
+                              <span class="ms-auto">
+                                <span class="icon ms-4">
+                                  <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
+                                  <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
+                                </span>
+                              </span>
+                            </button>
+                          </h4>
+                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>I work across web development, ecommerce, business development, growth and digital
+                                operations. Depending on the project, I can help build the technical side, improve how
+                                the business operates, or work across both.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h4 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              How can I get in touch with you?
+                              <span class="ms-auto">
+                                <span class="icon ms-4">
+                                  <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
+                                  <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
+                                </span>
+                              </span>
+                            </button>
+                          </h4>
+                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>You can reach me directly through the contact form on this page, by booking a call, or
+                                by emailing me. I usually respond within 24 hours.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h4 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Do you work with individuals or only businesses?
+                              <span class="ms-auto">
+                                <span class="icon ms-4">
+                                  <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
+                                  <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
+                                </span>
+                              </span>
+                            </button>
+                          </h4>
+                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>I work with both. Whether you’re an individual with a project idea or a business
+                                looking for a long-term development partner, I can adapt my services to your needs.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h4 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                              What is the process if I want to start a project with you?
+                              <span class="ms-auto">
+                                <span class="icon ms-4">
+                                  <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
+                                  <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
+                                </span>
+                              </span>
+                            </button>
+                          </h4>
+                          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>To begin, you’ll submit the contact form with some basic details about your project,
+                                including your goals, budget, and timeline. Once I review your submission, we’ll
+                                schedule a short call or continue over email to clarify your vision. After that, I’ll
+                                provide you with a clear project plan, timeline, and cost estimate before moving
+                                forward.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h4 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                              Do you provide ongoing support after a project is complete?
+                              <span class="ms-auto">
+                                <span class="icon ms-4">
+                                  <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
+                                  <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
+                                </span>
+                              </span>
+                            </button>
+                          </h4>
+                          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>Yes. I believe in long-term collaboration, so I offer maintenance, updates, and
+                                technical support depending on your needs.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h4 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                              Can I see examples of your previous work?
+                              <span class="ms-auto">
+                                <span class="icon ms-4">
+                                  <img class="icon-plus" src="assets/img/icons/plus.svg" alt="plus">
+                                  <img class="icon-minus d-none" src="assets/img/icons/minus.svg" alt="minus">
+                                </span>
+                              </span>
+                            </button>
+                          </h4>
+                          <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>Yes. You can view selected projects and detailed case studies on the Works page,
+                                including the role I played and what was built for each project.</p>
                             </div>
                           </div>
                         </div>
@@ -482,36 +504,37 @@
             </div>
           </div>
         </div>
-      </section>
+  </div>
+  </section>
 
-      <!-- background shape area start -->
-      <div class="background-shapes">
-        <div class="shape-1 common-shape">
-          <img src="assets/img/bg/banner-shape-1.png" alt="banner-shape-1">
-        </div>
-        <div class="shape-2 common-shape">
-          <img src="assets/img/bg/banner-shape-1.png" alt="banner-shape-1">
-        </div>
-        <div class="threed-shape-1 move-with-cursor" data-value="1">
-          <img src="assets/img/bg/object-3d-1.png" alt="object-3d-1">
-        </div>
-        <div class="threed-shape-2 move-with-cursor" data-value="1">
-          <img src="assets/img/bg/object-3d-2.png" alt="object-3d-2">
-        </div>
-      </div>
-      <!-- background shape area end -->
-    </main>
-    <!-- main area part end -->
+  <!-- background shape area start -->
+  <div class="background-shapes">
+    <div class="shape-1 common-shape">
+      <img src="assets/img/bg/banner-shape-1.png" alt="banner-shape-1">
+    </div>
+    <div class="shape-2 common-shape">
+      <img src="assets/img/bg/banner-shape-1.png" alt="banner-shape-1">
+    </div>
+    <div class="threed-shape-1 move-with-cursor" data-value="1">
+      <img src="assets/img/bg/object-3d-1.png" alt="object-3d-1">
+    </div>
+    <div class="threed-shape-2 move-with-cursor" data-value="1">
+      <img src="assets/img/bg/object-3d-2.png" alt="object-3d-2">
+    </div>
+  </div>
+  <!-- background shape area end -->
+  </main>
+  <!-- main area part end -->
 
-    <!-- footer part start -->
-    <footer class="footer-area">
-      <div class="container">
-        <div class="text text-center">
-          <p>@ 2024, Design By <a href="#">Richard Hazboun</a></p>
-        </div>
+  <!-- footer part start -->
+  <footer class="footer-area">
+    <div class="container">
+      <div class="text text-center">
+        <p>@ 2026 Richard Hazboun. All rights reserved.</p>
       </div>
-    </footer>
-    <!-- footer part end -->
+    </div>
+  </footer>
+  <!-- footer part end -->
   </div>
 
   <!-- JS here -->
